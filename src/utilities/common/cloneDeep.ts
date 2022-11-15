@@ -1,10 +1,13 @@
+import { cloneDeep as lodashCloneDeep } from 'lodash';
+
 const { toString } = Object.prototype;
 
 /**
  * Deeply clones a value to create a new instance.
  */
 export function cloneDeep<T>(value: T): T {
-  return cloneDeepHelper(value);
+  return lodashCloneDeep(value);
+  //return cloneDeepHelper(value);
 }
 
 function cloneDeepHelper<T>(val: T, seen?: Map<any, any>): T {
